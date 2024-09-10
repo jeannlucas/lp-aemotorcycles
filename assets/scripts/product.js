@@ -45,7 +45,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
         container.innerHTML = "";
 
-        products.forEach((product) => {
+        // Limite de produtos a exibir
+        const limit = 6;
+
+        products.forEach((product, index) => {
+          // Adiciona o limite de produtos
+          if (
+            index >= limit &&
+            document
+              .querySelector("#portfolio-flters .filter-active")
+              .getAttribute("data-filter") === "*"
+          ) {
+            return;
+          }
+
           const item = document.createElement("div");
           const categoryClass = `filter-${product.category.name
             .replace(/\s+/g, "-")
@@ -102,7 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Carrega categorias e produtos ao carregar a página
   loadCategories();
   loadProducts();
 });
