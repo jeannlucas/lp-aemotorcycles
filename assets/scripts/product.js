@@ -36,6 +36,16 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 
+  function loadProductImages(productId) {
+    return axios
+      .get(`http://localhost:3000/products/images/${productId}`)
+      .then((response) => response.data)
+      .catch((error) => {
+        console.error(`Erro ao buscar imagens do produto ${productId}:`, error);
+        return [];
+      });
+  }
+
   function loadProducts() {
     axios
       .get("http://localhost:3000/products")
@@ -59,38 +69,42 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
           }
 
-          const item = document.createElement("div");
-          const categoryClass = `filter-${product.category.name
-            .replace(/\s+/g, "-")
-            .toLowerCase()}`;
-          item.classList.add(
-            "col-lg-4",
-            "col-md-6",
-            "portfolio-item",
-            categoryClass
-          );
-          item.innerHTML = `
-              <div class="portfolio-wrap">
-                <img src="${
-                  product.imageUrl || "assets/img/portfolio/portfolio-1.jpg"
-                }" class="img-fluid" alt="${product.category.name}" />
-                <div class="portfolio-info">
-                  <h4>${product.name}</h4>
-                  <p>${product.category.name}</p>
-                  <div class="portfolio-links">
-                    <a href="${
-                      product.imageUrl || "#"
-                    }" data-gallery="portfolioGallery" class="portfolio-lightbox" title="${
-            product.name
-          }"></a>
-                    <a href="portfolio-details.html" title="More Details">
-                      <i class="bx bx-link"></i>
-                    </a>
+          loadProductImages(product.id).then((images) => {
+            const item = document.createElement("div");
+            const categoryClass = `filter-${product.category.name
+              .replace(/\s+/g, "-")
+              .toLowerCase()}`;
+            item.classList.add(
+              "col-lg-4",
+              "col-md-6",
+              "portfolio-item",
+              categoryClass
+            );
+
+            // Define a URL da imagem ou um fallback
+            const imageUrl =
+              images.length > 0
+                ? `data:image/jpeg;base64,${images[0].image}`
+                : "assets/img/portfolio/portfolio-1.jpg";
+
+            item.innerHTML = `
+                <div class="portfolio-wrap">
+                  <img src="${imageUrl}" class="img-fluid" alt="${product.name}" />
+                  <div class="portfolio-info">
+                    <h4>${product.name}</h4>
+                    <p>${product.category.name}</p>
+                    <div class="portfolio-links">
+                      <a href="${imageUrl}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="${product.name}">
+                      </a>
+                      <a href="portfolio-details.html?id=${product.id}" title="More Details">
+                        <i class="bx bx-link"></i>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-            `;
-          container.appendChild(item);
+              `;
+            container.appendChild(item);
+          });
         });
 
         const filterActive = document
