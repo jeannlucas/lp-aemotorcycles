@@ -1,10 +1,16 @@
+import { axiosInstance } from "../lib/api.js";
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("http://localhost:3000/categories");
-    if (!response.ok) {
+    const response = await axiosInstance.get("/categories");
+
+    // Em vez de verificar `response.ok`, verificamos o status diretamente
+    if (response.status !== 200) {
       throw new Error("Network response was not ok");
     }
-    const categories = await response.json();
+
+    // A resposta já está no formato `data` em Axios
+    const categories = response.data;
 
     const portfolioFilters = document.getElementById("portfolio-flters");
 

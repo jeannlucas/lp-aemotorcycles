@@ -1,7 +1,9 @@
+import { axiosInstance } from "../lib/api.js";
+
 document.addEventListener("DOMContentLoaded", function () {
   function loadCategories() {
-    axios
-      .get("http://localhost:3000/categories")
+    axiosInstance
+      .get("/categories")
       .then(function (response) {
         const categories = response.data;
         const filters = document.getElementById("portfolio-flters");
@@ -37,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function loadProductImages(productId) {
-    return axios
-      .get(`http://localhost:3000/products/images/${productId}`)
+    return axiosInstance
+      .get(`/products/images/${productId}`)
       .then((response) => response.data)
       .catch((error) => {
         console.error(`Erro ao buscar imagens do produto ${productId}:`, error);
@@ -47,16 +49,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function loadProducts() {
-    axios
-      .get("http://localhost:3000/products")
+    axiosInstance
+      .get("/products")
       .then(function (response) {
         const products = response.data;
-        const container = document.querySelector(".portfolio-container");
+        const container = document.querySelector("#productContainer");
 
         container.innerHTML = "";
 
         // Limite de produtos a exibir
-        const limit = 6;
+        const limit = 12;
 
         products.forEach((product, index) => {
           // Adiciona o limite de produtos

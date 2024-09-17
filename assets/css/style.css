@@ -19,7 +19,7 @@ a {
 }
 
 a:hover {
-  color: #9ed49a;
+  color: #eb1616;
   text-decoration: none;
 }
 
@@ -150,7 +150,7 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -260,7 +260,7 @@ h6 {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #151515;
@@ -828,6 +828,14 @@ section {
   margin-bottom: 30px;
 }
 
+.portfolio .portfolio-item img {
+  min-width: 356px;
+  min-height: 356px;
+  max-height: 356px;
+  height: 100%;
+  width: 100%;
+}
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 25px auto;
@@ -986,6 +994,10 @@ section {
 }
 
 .portfolio-details .portfolio-details-slider img {
+  min-width: 600px;
+  min-height: 600px;
+  max-height: 600px;
+  height: 100%;
   width: 100%;
 }
 
@@ -1754,4 +1766,8 @@ section {
   text-align: center;
   font-size: 13px;
   padding-top: 5px;
+}
+
+#productContainer {
+  height: auto !important;
 }

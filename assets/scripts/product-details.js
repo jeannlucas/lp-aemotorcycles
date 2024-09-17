@@ -1,5 +1,6 @@
+import { axiosInstance } from "../lib/api.js";
+
 document.addEventListener("DOMContentLoaded", function () {
-  // Capturar o ID do produto da URL
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
 
@@ -8,13 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  // Função para carregar os dados do produto
   async function loadProductDetails() {
     try {
       // Requisição para buscar os detalhes do produto
-      const response = await axios.get(
-        `http://localhost:3000/products/${productId}`
-      );
+      const response = await axiosInstance.get(`/products/${productId}`);
       const product = response.data;
 
       // Atualizar as informações do produto na página
@@ -35,39 +33,48 @@ document.addEventListener("DOMContentLoaded", function () {
       document.querySelector(".portfolio-description p").textContent =
         product.description;
 
-      // Carregar imagens do produto
       await loadProductImages(product.id);
     } catch (error) {
       console.error("Erro ao carregar os detalhes do produto:", error);
     }
   }
 
-  // Função para carregar as imagens do produto
   async function loadProductImages(productId) {
     try {
-      // Requisição para buscar as imagens do produto
-      const response = await axios.get(
-        `http://localhost:3000/products/images/${productId}`
-      );
+      const response = await axiosInstance.get(`/products/images/${productId}`);
       const images = response.data;
 
       const sliderWrapper = document.querySelector(
         ".portfolio-details-slider .swiper-wrapper"
       );
-      sliderWrapper.innerHTML = ""; // Limpa o slider antes de adicionar novas imagens
+      sliderWrapper.innerHTML = "";
 
-      // Loop para adicionar cada imagem ao slider
       images.forEach((imageData) => {
         const slide = document.createElement("div");
         slide.classList.add("swiper-slide");
         slide.innerHTML = `<img src="data:image/jpeg;base64,${imageData.image}" alt="Imagem do Produto">`;
         sliderWrapper.appendChild(slide);
       });
+
+      initializeSwiper();
     } catch (error) {
       console.error("Erro ao carregar as imagens do produto:", error);
     }
   }
 
-  // Carregar os detalhes do produto quando a página for carregada
+  function initializeSwiper() {
+    new Swiper(".portfolio-details-slider", {
+      loop: true,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+    });
+  }
+
   loadProductDetails();
 });
