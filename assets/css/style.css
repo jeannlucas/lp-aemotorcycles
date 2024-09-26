@@ -1064,19 +1064,38 @@ section {
 .highlight {
   margin: 10px 0;
   padding: 10px;
-  border: 2px solid #ff5733; /* Cor chamativa */
-  background-color: #ffe0e0; /* Fundo leve */
+  border: 2px solid green; /* Cor chamativa */
+  background-color: rgb(31, 173, 31); /* Fundo leve */
   border-radius: 5px;
   transition: transform 0.3s;
 }
 
 .highlight a {
-  color: #ff5733;
+  color: #555555;
   font-weight: bold;
 }
 
 .highlight:hover {
-  background-color: #ffcccc; /* Fundo mais escuro ao passar o mouse */
+  background-color: #5ab652; /* Fundo mais escuro ao passar o mouse */
+  transform: scale(1.05);
+}
+
+.highlight1 {
+  margin: 10px 0;
+  padding: 10px;
+  border: 2px solid rgb(157, 157, 9); /* Cor chamativa */
+  background-color: rgb(214, 214, 40); /* Fundo leve */
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.highlight1 a {
+  color: #555555;
+  font-weight: bold;
+}
+
+.highlight1:hover {
+  background-color: yellow; /* Fundo mais escuro ao passar o mouse */
   transform: scale(1.05);
 }
 
