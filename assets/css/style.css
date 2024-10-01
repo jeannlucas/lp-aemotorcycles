@@ -1061,7 +1061,7 @@ section {
   padding: 0;
 }
 
-.highlight {
+.portfolio-info .preco-atacado {
   margin: 10px 0;
   padding: 10px;
   border: 2px solid green; /* Cor chamativa */
@@ -1070,17 +1070,17 @@ section {
   transition: transform 0.3s;
 }
 
-.highlight a {
+.portfolio-info .preco-atacado a {
   color: #555555;
   font-weight: bold;
 }
 
-.highlight:hover {
+.portfolio-info .preco-atacado:hover {
   background-color: #5ab652; /* Fundo mais escuro ao passar o mouse */
   transform: scale(1.05);
 }
 
-.highlight1 {
+.portfolio-info .anuncio-ml {
   margin: 10px 0;
   padding: 10px;
   border: 2px solid rgb(157, 157, 9); /* Cor chamativa */
@@ -1089,12 +1089,12 @@ section {
   transition: transform 0.3s;
 }
 
-.highlight1 a {
+.portfolio-info .anuncio-ml a {
   color: #555555;
   font-weight: bold;
 }
 
-.highlight1:hover {
+.portfolio-info .anuncio-ml:hover {
   background-color: yellow; /* Fundo mais escuro ao passar o mouse */
   transform: scale(1.05);
 }

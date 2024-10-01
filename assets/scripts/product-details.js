@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         <li><strong>Preço Varejo</strong>: R$ ${product.price_varejo.toFixed(
           2
         )}</li>
-        <li><strong>Preço Atacado</strong>: <a href="https://wa.me/5544999300014?text=Olá, tenho interesse em realizar compras no atacado. Poderia me orientar sobre os passos que devo seguir?">
+        <li class="preco-atacado"><strong>Preço Atacado</strong>: <a href="https://wa.me/5544999300014?text=Olá, tenho interesse em realizar compras no atacado. Poderia me orientar sobre os passos que devo seguir?">
           Sob Consulta</a></li>
-        <li><strong>Anúncio no Mercado Livre</strong>: <a href="${
+        <li class="anuncio-ml"><strong>Anúncio no Mercado Livre</strong>: <a href="${
           product.mercado_livre
         }" target="_blank">Clique aqui</a></li>
       `;
