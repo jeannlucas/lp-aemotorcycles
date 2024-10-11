@@ -994,9 +994,17 @@ section {
 }
 
 .portfolio-details .portfolio-details-slider img {
-  min-width: 600px;
-  min-height: 600px;
+  min-width: 356px;
+  min-height: 356px;
   max-height: 600px;
+  height: 100%;
+  width: 100%;
+}
+
+.portfolio .portfolio-item img {
+  min-width: 356px;
+  min-height: 356px;
+  max-height: 356px;
   height: 100%;
   width: 100%;
 }
