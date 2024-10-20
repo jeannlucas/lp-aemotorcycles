@@ -1,9 +1,36 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
 root = true
 
 [*]
-indent_style = space
-indent_size = 2
-end_of_line = lf
+# Define o conjunto de caracteres para o arquivo
 charset = utf-8
-trim_trailing_whitespace = true
+
+# Define a quantidade de espaços usados para indentação
+indent_style = space
+indent_size = 6
+
+# Define que as linhas devem terminar com uma nova linha
 insert_final_newline = true
+
+# Define o estilo de quebra de linha como LF (Linux e Mac) ou CRLF (Windows)
+end_of_line = lf
+
+# Remove espaços desnecessários no final de cada linha
+trim_trailing_whitespace = true
+
+# Limite de 120 caracteres por linha (opcional, para manter o código mais legível)
+max_line_length = 120
+
+[*.js]
+# Específico para arquivos JavaScript
+indent_size = 6
+
+[*.html]
+# Específico para arquivos HTML
+indent_size = 6
+
+[*.css]
+# Específico para arquivos CSS
+indent_size = 6
+
