@@ -943,6 +943,7 @@ section {
       padding: 15px;
       border-radius: 0 0 3px 3px;
       line-height: 1.5;
+      position: relative;
 }
 
 .portfolio .portfolio-item .portfolio-info h4 {
@@ -967,6 +968,25 @@ section {
       font-size: 14px;
       text-transform: uppercase;
       margin-top: 5px;
+}
+
+.learn-more {
+      display: inline-block;
+      padding: 10px 15px;
+      border: 2px solid #eb1616;
+      border-radius: 50px;
+      background-color: #ffffff;
+      color: #333;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 10px;
+}
+
+.learn-more:hover {
+      background-color: #eb1616;
+      color: #ffffff;
+      box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
 }
 
 /*--------------------------------------------------------------

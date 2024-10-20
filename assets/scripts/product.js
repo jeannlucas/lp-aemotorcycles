@@ -69,10 +69,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                         <i class="bi bi-link"></i>
                                     </a>
                                 </figure>
-                                <div class="portfolio-info">
+                                    <div class="portfolio-info">
                                     <h4><a href="portfolio-details.html?id=${product.id}">${product.name}</a></h4>
-                                    <p><a href="portfolio-details.html?id=${product.id}">Clique e Saiba Mais</a></p>
-                                </div>
+                                    <p><a href="portfolio-details.html?id=${product.id}" class="learn-more">Clique e Saiba Mais</a></p>
+                                    </div>
+
                             </div>
                         `;
                                     container.appendChild(item);
