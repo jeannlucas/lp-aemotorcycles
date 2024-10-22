@@ -1005,8 +1005,8 @@ section {
 }
 
 .portfolio .portfolio-item img {
-      min-width: 356px;
-      min-height: 356px;
+      min-width: 250px;
+      min-height: 260px;
       max-height: 356px;
       height: 100%;
       width: 100%;
@@ -1069,8 +1069,8 @@ section {
 .portfolio-info .preco-atacado {
       margin: 10px 0;
       padding: 10px;
-      border: 2px solid green; /* Cor chamativa */
-      background-color: rgb(31, 173, 31); /* Fundo leve */
+      border: 2px solid rgb(157, 157, 9); /* Cor chamativa */
+      background-color: #00a650; /* Fundo leve */
       border-radius: 5px;
       transition: transform 0.3s;
 }
@@ -1081,7 +1081,7 @@ section {
 }
 
 .portfolio-info .preco-atacado:hover {
-      background-color: #5ab652; /* Fundo mais escuro ao passar o mouse */
+      background-color: #00a650; /* Fundo mais escuro ao passar o mouse */
       transform: scale(1.05);
 }
 
@@ -1089,7 +1089,7 @@ section {
       margin: 10px 0;
       padding: 10px;
       border: 2px solid rgb(157, 157, 9); /* Cor chamativa */
-      background-color: rgb(214, 214, 40); /* Fundo leve */
+      background-color: #ffe600; /* Fundo leve */
       border-radius: 5px;
       transition: transform 0.3s;
 }
@@ -1100,7 +1100,7 @@ section {
 }
 
 .portfolio-info .anuncio-ml:hover {
-      background-color: yellow; /* Fundo mais escuro ao passar o mouse */
+      background-color: #ffe600; /* Fundo mais escuro ao passar o mouse */
       transform: scale(1.05);
 }
 

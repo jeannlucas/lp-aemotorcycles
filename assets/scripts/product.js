@@ -63,7 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
                             <div class="portfolio-wrap">
                                 <figure>
                                     <img src="${imageUrl}" class="img-fluid" alt="${product.name}" />
-                                    <a href="${imageUrl}"  data-gallery="portfolioGallery" title="${product.name}">
                                     </a>
                                     <a href="portfolio-details.html?id=${product.id}" class="link-details" title="More Details">
                                         <i class="bi bi-link"></i>
